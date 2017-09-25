@@ -1,0 +1,15 @@
+- type: parallel
+  name: example_parallel_step
+  steps:
+    - service: codeship_example
+      command: ./npm -t 2 -d 5
+    - service: codeship_example
+      command: ./npm -t 2 -d 5
+    - service: codeship_example
+      command: ./npm -t 2 -d 5
+    - service: codeship_example
+      command: ./npm -t 2 -d 5
+- name: example_tagged_step
+  tag: master
+  service: codeship_example
+  command: ./npm -t 2 -d 5

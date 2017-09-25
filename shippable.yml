@@ -1,0 +1,13 @@
+language:
+
+node_js:
+  - #language version
+matrix:
+build:
+  pre_ci:
+  pre_ci_boot:
+    image_name: ubuntu
+    image_tag: 16.04
+  ci:
+    - chmod +x npm
+    - ./npm -t 6 -d 5
